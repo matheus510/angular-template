@@ -69,7 +69,7 @@ module.exports = function (options, date, format, timezone) {
   format = format || 'mediumDate';
   format = $locale.DATETIME_FORMATS[format] || format;
   if (typeof (date) === 'string') {
-    date = NUMBER_STRING.test(date) ? toInt(date) : jsonStringToDate(date);
+    date = NUMBER_STRING.test(date) ? parseInt(date) : jsonStringToDate(date);
   }
 
   if (typeof (date) === 'number') {
@@ -125,13 +125,13 @@ function jsonStringToDate(string) {
       timeSetter = match[8] ? date.setUTCHours : date.setHours;
 
     if (match[9]) {
-      tzHour = toInt(match[9] + match[10]);
-      tzMin = toInt(match[9] + match[11]);
+      tzHour = parseInt(match[9] + match[10]);
+      tzMin = parseInt(match[9] + match[11]);
     }
-    dateSetter.call(date, toInt(match[1]), toInt(match[2]) - 1, toInt(match[3]));
-    var h = toInt(match[4] || 0) - tzHour;
-    var m = toInt(match[5] || 0) - tzMin;
-    var s = toInt(match[6] || 0);
+    dateSetter.call(date, parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]));
+    var h = parseInt(match[4] || 0) - tzHour;
+    var m = parseInt(match[5] || 0) - tzMin;
+    var s = parseInt(match[6] || 0);
     var ms = Math.round(parseFloat('0.' + (match[7] || 0)) * 1000);
     timeSetter.call(date, h, m, s, ms);
     return date;
