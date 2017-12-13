@@ -8,7 +8,7 @@ function SrcDirective($, data, options, angularTemplate) {
   htSrcs.each(function (i, elem) {
     var expr = $(this).attr(options.prefix + '-src').trim();
     $(this).attr('src', expr)
-    $(this).removeAttr(options.prefix + '-if');
+    $(this).removeAttr(options.prefix + '-src');
   });
 }
 
