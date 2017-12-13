@@ -1,6 +1,6 @@
 'use strict';
 
-function srcDirective($, data, options, angularTemplate) {
+function SrcDirective($, data, options, angularTemplate) {
   /**
    * ht-src expression
    */
@@ -12,4 +12,4 @@ function srcDirective($, data, options, angularTemplate) {
   });
 }
 
-module.exports = IfDirective
+module.exports = SrcDirective
