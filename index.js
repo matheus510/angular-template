@@ -108,8 +108,7 @@ angularTemplate.directives = [
   require('./directives/if'),
   require('./directives/class'),
   require('./directives/bind'),
-  require('./directives/style'),
-  require('./directives/href')
+  require('./directives/style')
 ];
 
 // key/value pairs of supported pipes
